@@ -7,6 +7,8 @@ import _ from 'lodash'
 import moment from 'moment';
 import ja from 'date-fns/locale/ja'
 import './style.css'
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { IconButton } from '@mui/material';
 registerLocale('ja', ja)
 
 const toUtcIso8601str = (momentInstance) => {
@@ -26,6 +28,11 @@ const Calendar = () => {
   }
   const handleChangeEnd = (selectedDate) => {
     setEndDate(toUtcIso8601str(moment(selectedDate)))
+  }
+  const CalenderButton = () => {
+    <IconButton>
+      <CalendarMonthIcon />
+    </IconButton>
   }
 
 
@@ -84,6 +91,7 @@ const Calendar = () => {
                 </button>
               </div>
             )}
+            onInputClick={{endAdornment: <CalenderButton />}}
           />
         </div>
         <div className='space'>
@@ -141,6 +149,7 @@ const Calendar = () => {
                 </button>
               </div>
             )}
+            InputProps={{endAdornment: <CalenderButton />}}
           />
         </div>
       </Fragment>
