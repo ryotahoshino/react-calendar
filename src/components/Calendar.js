@@ -11,6 +11,11 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { IconButton } from '@mui/material';
 registerLocale('ja', ja)
 
+const parseAsMoment = (dateTimeStr) => {
+  return moment.utc(dateTimeStr, 'YYYY-MM-DDTHH:mm:00Z', 'ja').utcOffset(9)
+}
+
+
 const toUtcIso8601str = (momentInstance) => {
   return momentInstance
     .clone()
@@ -41,6 +46,7 @@ const Calendar = () => {
       <Fragment>
         <div className='before-date'>
           <DatePicker
+            dateFormat="yyyy/MM/dd"
             locale="ja"
             selected={moment(startDate).toDate()}
             selectsStart
@@ -91,7 +97,6 @@ const Calendar = () => {
                 </button>
               </div>
             )}
-            onInputClick={{endAdornment: <CalenderButton />}}
           />
         </div>
         <div className='space'>
@@ -99,6 +104,7 @@ const Calendar = () => {
         </div>
         <div className='after-date'>
           <DatePicker
+            dateFormat="yyyy/MM/dd"
             locale="ja"
             selected={moment(endDate).toDate()}
             selectsEnd
