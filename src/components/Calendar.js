@@ -46,7 +46,7 @@ const Calendar = () => {
       <Fragment>
         <div className='before-date'>
           <DatePicker
-            dateFormat="yyyy/MM/dd"
+            dateFormat="yyyy年MM月dd日"
             locale="ja"
             selected={moment(startDate).toDate()}
             selectsStart
@@ -64,6 +64,7 @@ const Calendar = () => {
             }) => (
               <div>
                 <button
+                  className='month-button'
                   onClick={decreaseMonth}
                   disabled={prevMonthButtonDisabled}
                 >
@@ -90,6 +91,7 @@ const Calendar = () => {
                   ))}
                 </select>
                 <button
+                  className='month-button'
                   onClick={increaseMonth}
                   disabled={nextMonthButtonDisabled}
                 >
@@ -104,7 +106,7 @@ const Calendar = () => {
         </div>
         <div className='after-date'>
           <DatePicker
-            dateFormat="yyyy/MM/dd"
+            dateFormat="yyyy年MM月dd日"
             locale="ja"
             selected={moment(endDate).toDate()}
             selectsEnd
