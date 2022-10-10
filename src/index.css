@@ -37,3 +37,7 @@
   outline: none;
   box-shadow: 0 0 0 4px #cbd6ee;
 }
+
+.custom-select {
+  padding: 2.5px;
+}

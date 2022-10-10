@@ -71,6 +71,7 @@ const Calendar = () => {
                   前月
                 </button>
                 <select
+                  className='custom-select'
                   value={getYear(date)}
                   onChange={({ target: {value} }) => changeYear(value)}
                 >
@@ -81,6 +82,7 @@ const Calendar = () => {
                   ))}
                 </select>
                 <select
+                  className='custom-select'
                   value={getMonth(date)}
                   onChange={({ target: { value } }) => changeMonth(value)}
                 >
